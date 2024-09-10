@@ -154,7 +154,7 @@ resource "oci_core_subnet" "vcn_public_subnet" {
 
 resource "oci_containerengine_cluster" "k8s_cluster" {
   compartment_id     = var.compartment_id
-  kubernetes_version = "v1.21.5"
+  kubernetes_version = var.kubernetes_version
   name               = "free-k8s-cluster"
   vcn_id             = module.vcn.vcn_id
 
@@ -199,7 +199,7 @@ data "oci_core_images" "latest_image" {
 resource "oci_containerengine_node_pool" "k8s_node_pool" {
   cluster_id         = oci_containerengine_cluster.k8s_cluster.id
   compartment_id     = var.compartment_id
-  kubernetes_version = "v1.21.5"
+  kubernetes_version = var.kubernetes_version
   name               = "free-k8s-node-pool"
   node_config_details {
     dynamic placement_configs {
