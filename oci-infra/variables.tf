@@ -17,3 +17,13 @@ variable "kubernetes_version" {
   type        = string
   description = "The Kubernetes version"
 }
+
+variable "operating_system" {
+  type        = string
+  description = "Operating System"
+}
+
+variable "operating_system_version" {
+  type        = string
+  description = "Operating System version"
+}
