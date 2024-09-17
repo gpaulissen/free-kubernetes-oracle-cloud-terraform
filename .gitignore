@@ -2,3 +2,6 @@
 oci-infra/.env
 *~
 oci-infra/governance/remote-backend.tf
+oci-infra/terraform-states-bucket-credentials
+oci-infra/network/remote-state.tf
+oci-infra/network/remote-backend.tf
