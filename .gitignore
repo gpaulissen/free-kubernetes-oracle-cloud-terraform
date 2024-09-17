@@ -1,3 +1,4 @@
 
 oci-infra/.env
 *~
+oci-infra/governance/remote-backend.tf
