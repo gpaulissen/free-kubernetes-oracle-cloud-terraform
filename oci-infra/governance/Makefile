@@ -10,9 +10,10 @@ plan: plan.out
 plan.out: .terraform $(TF_FILES)
 	terraform plan -out=$@
 
-apply: plan.out
-	terraform apply plan -auto-approve $<
+apply: terraform.tfstate $(TF_FILES)
 
+terraform.tfstate: plan.out
+	terraform plan -auto-approve $<
 
 .PHONY: init plan apply
 
